@@ -1,0 +1,41 @@
+{
+  email,
+  ...
+}: {
+  enable = true;
+  settings = {
+    user.email = email;
+    user.name = "Tangtang Zhou";
+    alias = {
+      s = "status";
+      pfl = "push --force-with-lease";
+      log1l = "log --oneline";
+      logp = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
+      branch-merged = "!git branch --merged | grep  -v '\\*\\|master\\|main'";
+    };
+    core = {
+      editor = "nvim";
+    };
+    push = {
+      default = "current";
+      autoSetupRemote = true;
+    };
+    pull = {
+      rebase = true;
+    };
+    delta = {
+      navigate = true;
+      dark = true;
+    };
+    merge.tool = "nvimdiff";
+    mergetool = {
+      prompt = false;
+      keepBackup = false;
+    };
+    "mergetool \"vimdiff\"".layout = "LOCAL,MERGED,REMOTE";
+    init = {
+      defaultBranch = "main";
+    };
+    credential.helper = "store";
+  };
+}
