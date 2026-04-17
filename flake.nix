@@ -19,6 +19,7 @@
     home-manager,
     stylix,
   }: let
+    username = "tangtang"; # TODO: edit if user is different
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -31,10 +32,10 @@
       ];
     };
   in {
-    homeConfigurations.tangtang = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {
-        username = "tangtang";
+      	inherit username;
       };
       modules = [
         stylix.homeModules.stylix
