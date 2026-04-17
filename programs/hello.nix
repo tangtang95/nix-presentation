@@ -5,6 +5,6 @@ let
   x = 3;
 in
 pkgs.writeShellScriptBin "hello" ''
-  ${pkgs.cowsay}/bin/cowsay "hello ${world} ${builtins.toString (y * 2)}!"
+  ${pkgs.cowsay}/bin/cowsay "hello ${world} ${toString (y * 2)}!"
 ''
 
