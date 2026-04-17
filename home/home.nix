@@ -48,6 +48,7 @@ in {
         enable = true;
         icons = "auto";
       };
+      bat.enable = true;
       zoxide.enable = true;
       starship.enable = true;
       fzf.enable = true;
