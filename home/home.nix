@@ -21,6 +21,7 @@ in {
       dust
       fastfetch
       wslu
+      ponysay
       customHelloPkg
     ];
   home.sessionVariables = {
