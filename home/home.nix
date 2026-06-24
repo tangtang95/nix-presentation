@@ -29,9 +29,6 @@ in {
     EDITOR = "nvim";
   };
 
-  # zellij static config file (because limitation in nix to kdl converter)
-  xdg.configFile."zellij/config.kdl".source = ../config/zellij.kdl;
-
   programs =
     {
       home-manager.enable = true;
@@ -54,7 +51,14 @@ in {
       starship.enable = true;
       fzf.enable = true;
       yazi.enable = true;
-      zellij.enable = true;
+      zellij = {
+        enable = true;
+	settings = {
+	  default_shell = "fish";
+          show_startup_tips = false;
+          pane_frames = false;
+	};
+      };
       git = import ../programs/git.nix {
         inherit email;
       };
